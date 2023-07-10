@@ -14,3 +14,21 @@ class Solution(object):
         i += 1
 
     return False
+
+
+
+class Solution(object):
+  def canPlaceFlowers(self ,flowerbed, n):
+    count = 0
+    length = len(flowerbed)
+    i = 0
+    
+    while i < length and count < n:
+        if flowerbed[i] == 0:
+            if i == 0 or flowerbed[i-1] == 0:
+                if i == length-1 or flowerbed[i+1] == 0:
+                    count += 1
+                    flowerbed[i] = 1
+        i += 1
+    
+    return count >= n
