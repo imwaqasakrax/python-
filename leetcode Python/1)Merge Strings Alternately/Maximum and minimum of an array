@@ -1,0 +1,32 @@
+Given an array of size N. The task is to find the maximum and the minimum element of the array using the minimum number of comparisons.
+
+Examples:
+
+Input: arr[] = {3, 5, 4, 1, 9}
+Output: Minimum element is: 1
+              Maximum element is: 9
+
+Input: arr[] = {22, 14, 8, 17, 35, 3}
+Output:  Minimum element is: 3
+              Maximum element is: 35
+
+
+def find_min_max(arr):
+    if len(arr) == 0:
+        return None, None  
+
+    min_element = arr[0]  
+    max_element = arr[0]  
+
+    for element in arr:
+        if element < min_element:
+            min_element = element
+        if element > max_element:
+            max_element = element
+
+    return min_element, max_element
+
+my_array = [4, 2, 9, 5, 1, 8]
+min_val, max_val = find_min_max(my_array)
+print("The minimum element in the array is:", min_val)
+print("The maximum element in the array is:", max_val)
