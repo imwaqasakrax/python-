@@ -18,3 +18,11 @@ class Solution:
      def reverseWord(self, str: str) -> str:
          result= str[::-1]
          return result
+...........................................................................................................................
+class Solution:
+    def reverseWord(self, s: str) -> str:
+        reversed_array = []
+        for i in range(len(s) - 1, -1, -1):
+            reversed_array.append(s[i])
+        reversed_str = ''.join(reversed_array)
+        return reversed_str
