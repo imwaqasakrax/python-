@@ -22,3 +22,40 @@ class Solution(object):
             for j in range(i+1, l):
                 if nums[i] + nums[j] == target:  
                     return [i, j]
+---------------------------------------------------------------------------------------------------------------------------
+def twoSum(arr, target, n):
+    result=[]
+    if len(arr)==1:
+
+        return [(-1,-1)]
+
+    arr.sort()
+
+    left=0
+
+    right=len(arr)-1
+
+    while left<right:
+
+        if arr[left]+arr[right]==target:
+
+            result.append((arr[left],arr[right]))
+
+            left+=1
+
+            right-=1
+
+        elif arr[left]+arr[right]<target:
+
+            left+=1
+
+        elif arr[left]+arr[right]>target:
+
+            right-=1
+
+    if len(result)==0:
+
+        result.append((-1,-1))
+
+    return result
+
